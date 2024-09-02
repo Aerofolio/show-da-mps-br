@@ -39,3 +39,46 @@ button {
     font-weight: 400;
     font-size: 1rem;
 }
+
+.header {
+    background-color: var(--gray-700);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.wrapper {
+    margin: 2rem auto;
+    max-width: 1000px;
+}
+
+.wrapper>main {
+    background-color: var(--gray-700);
+    border-radius: 8px;
+    width: 100%;
+    padding: 2rem;
+}
+
+.button-green {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 0;
+    background: var(--green-500);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background-color 0.1s;
+}
+
+.button-green:not(:disabled):hover {
+    background: var(--green-300);
+}
+
+.button-green:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
