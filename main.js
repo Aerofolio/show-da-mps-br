@@ -62,7 +62,8 @@ const startup = {
 
 /********** Utils **********/
 const utils = {
-    randomIntFromInterval: (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+    randomIntFromInterval: (min, max) => Math.floor(Math.random() * (max - min + 1) + min),
+    isNullOrEmpty: (a) => a === null || a === undefined || a === '' || a.length === 0
 }
 
 /********** Questions Functions **********/
@@ -75,6 +76,35 @@ const question = {
         if(notAnsweredQuestions.length <= 0) console.error('Error: There is no questions left to answer.');
 
         return notAnsweredQuestions[randomQuestionIndex];    
+    }
+};
+
+/********** Presentation Functions **********/
+const presentation = {
+    displayNoneClass: 'd-none',
+    setVisible: function (id, visible) {
+        const el = document.getElementById(id)
+        if (utils.isNullOrEmpty(el)){
+            console.error(`Invalid id: ${id}`);
+            return;
+        }
+
+        if (!visible && !el.classList.contains(this.displayNoneClass)){
+            el.classList.add(this.displayNoneClass);
+        } else if (visible && el.classList.contains(this.displayNoneClass)){
+            el.classList.remove(this.displayNoneClass);
+        }
+    }
+};
+
+/********** Game Functions **********/
+const game = {
+    start: function () {
+        const invisbleDivsIds = ['contentNewGame', 'contentEndGame'];
+        const visibleDivs = ['contentGame'];
+
+        invisbleDivsIds.forEach(x => presentation.setVisible(x, false));
+        visibleDivs.forEach(x => presentation.setVisible(x, true));
     }
 };
 
