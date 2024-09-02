@@ -95,3 +95,42 @@ button {
 .text-center {
     text-align: center;
 }
+
+.d-none {
+    display: none;
+}
+
+.answer {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--gray-900);
+    color: var(--gray-300);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.answer+.answer {
+    margin-top: 0.8rem;
+}
+
+.answer .ph {
+    font-size: 25px;
+}
+
+.active {
+    box-shadow: 0 0 0 2px var(--green-500);
+}
+
+.question {
+    margin-bottom: 2rem;
+}
+
+.questionNumber {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 25px;
+    color: var(--green-300);
+}

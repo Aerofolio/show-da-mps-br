@@ -36,7 +36,7 @@
                     <p class="mt-1">
                         Aprenda se divertindo! Jogue agora o show da MPS.BR!
                     </p>
-                    <button type="button" onclick="startGame()" class="button-green mt-1">
+                    <button type="button" onclick="game.start()" class="button-green mt-1">
                         <i class="ph ph-play"></i>
                         JOGAR
                     </button>
@@ -44,11 +44,42 @@
 
             </div>
 
-            <div id="contentGame" style="display: none;">
+            <div id="contentGame" class="d-none">
+
+                <div class="questionNumber">
+                    <strong>
+                        Pergunta 1/10
+                    </strong>
+                </div>
+                <div class="question">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim ipsa a perferendis eius voluptas odit
+                    consequuntur minima deserunt fugit et numquam, in voluptate quam, id nemo. Consequuntur voluptas
+                    nobis accusantium.
+                </div>
+
+                <div class="answer active">
+                    <i class="ph ph-check-circle"></i>
+                    <span>Resposta 1</span>
+                </div>
+
+                <div class="answer">
+                    <i class="ph ph-circle"></i>
+                    <span>Resposta 2</span>
+                </div>
+
+                <div class="answer">
+                    <i class="ph ph-circle"></i>
+                    <span>Resposta 3</span>
+                </div>
+
+                <div class="answer">
+                    <i class="ph ph-circle"></i>
+                    <span>Resposta 4</span>
+                </div>
 
             </div>
 
-            <div id="contentEndGame" style="display: none;">
+            <div id="contentEndGame" class="d-none">
 
             </div>
 
