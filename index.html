@@ -78,7 +78,26 @@
                     </div>
                 </div>
 
-                <a>Precisa de ajuda dos univisitários? (1 Ajuda restante)</a>
+                <div class="flex-end">
+                    <button type="button" onclick="game.start()" class="button-green mt-1">
+                        AVANÇAR
+                    </button>
+                </div>
+
+                <div class="mt-2 container-helps">
+                    <label for="modal-1" class="link-help">
+                        <span>
+                            Ajuda dos Univisitários
+                            (1 Ajuda restante)
+                        </span>
+                    </label>
+                    <label for="modal-2" class="link-help">
+                        <span>
+                            Ajuda da Plateia
+                            (1 Ajuda restante)
+                        </span>
+                    </label>
+                </div>
 
             </div>
 
@@ -88,6 +107,33 @@
 
         </main>
     </div>
+
+
+    <input class="modal-state" id="modal-1" type="checkbox" />
+    <div class="modal">
+        <label class="modal__bg" for="modal-1"></label>
+        <div class="modal__inner">
+            <label class="modal__close" for="modal-1"></label>
+            <h2 class="text-center">Ajuda dos Universitários</h2>
+            <p>
+                conteúdo
+            </p>
+        </div>
+    </div>
+
+    <input class="modal-state" id="modal-2" type="checkbox" />
+    <div class="modal">
+        <label class="modal__bg" for="modal-2"></label>
+        <div class="modal__inner">
+            <label class="modal__close" for="modal-2"></label>
+            <h2 class="text-center">Ajuda da Plateia</h2>
+            <p>
+                conteúdo
+            </p>
+        </div>
+    </div>
+
+
     <script type="text/javascript" src="./main.js"></script>
 
 </body>
