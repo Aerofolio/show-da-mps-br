@@ -60,7 +60,7 @@ const startup = {
         });
     },
     setAnswersEvents: function () {
-        const answersListDiv = document.getElementById('answer-list');
+        const answersListDiv = document.getElementById('answerList');
         for (let answerDiv = answersListDiv.children[0]; !utils.isNullOrEmpty(answerDiv); answerDiv = answerDiv.nextElementSibling) {
             answerDiv.onclick = function () {
                 for (let unselectedAnswer = answersListDiv.children[0]; !utils.isNullOrEmpty(unselectedAnswer); unselectedAnswer = unselectedAnswer.nextElementSibling) {
@@ -128,8 +128,22 @@ const game = {
 
         invisbleDivsIds.forEach(x => presentation.setVisible(x, false));
         visibleDivs.forEach(x => presentation.setVisible(x, true));
-        //get random question
-        //set question on screen
+
+        this.nextQuestion();
+    },
+    nextQuestion: function () {
+        const selectedQuestion = question.getRandomQuestion();
+
+        const questionDiv = document.getElementById('question');
+        questionDiv.innerText = selectedQuestion.statment;
+        
+        const answersListDiv = document.getElementById('answerList');
+        for (let i = 0; i < selectedQuestion.answers.length; i++) {
+            const answerDiv = answersListDiv.children[i];
+            const answerText = answerDiv.getElementsByTagName('span')[0];
+
+            answerText.innerText = selectedQuestion.answers[i].description;
+        }
     }
 };
 
