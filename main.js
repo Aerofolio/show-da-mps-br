@@ -50,6 +50,7 @@ const questionsList = [
 const startup = {
     start: function () {
         this.setQuestionsIds();
+        this.setAnswersEvents();
     },
     setQuestionsIds: function () {
         let answerId = 0;
@@ -57,6 +58,22 @@ const startup = {
             question.id = index;
                 question.answers.forEach(answer => answer.id = answerId++);
         });
+    },
+    setAnswersEvents: function () {
+        const answersListDiv = document.getElementById('answer-list');
+        for (let answerDiv = answersListDiv.children[0]; !utils.isNullOrEmpty(answerDiv); answerDiv = answerDiv.nextElementSibling) {
+            answerDiv.onclick = function () {
+                for (let unselectedAnswer = answersListDiv.children[0]; !utils.isNullOrEmpty(unselectedAnswer); unselectedAnswer = unselectedAnswer.nextElementSibling) {
+                    const answerIcon = unselectedAnswer.getElementsByTagName('i')[0];
+                    answerIcon.classList.replace(stylesClasses.selectedIcon, stylesClasses.unselectedIcon);
+                    unselectedAnswer.classList.remove(stylesClasses.selectedAnswer);
+                }
+
+                const answerIcon = answerDiv.getElementsByTagName('i')[0];
+                answerIcon.classList.replace(stylesClasses.unselectedIcon, stylesClasses.selectedIcon);
+                answerDiv.classList.add(stylesClasses.selectedAnswer);
+            }
+        }
     }
 };
 
@@ -80,8 +97,14 @@ const question = {
 };
 
 /********** Presentation Functions **********/
+const stylesClasses = {
+    displayNone: 'd-none',
+    selectedAnswer: 'active',
+    selectedIcon: 'ph-check-circle',
+    unselectedIcon: 'ph-circle'
+};
+
 const presentation = {
-    displayNoneClass: 'd-none',
     setVisible: function (id, visible) {
         const el = document.getElementById(id)
         if (utils.isNullOrEmpty(el)){
@@ -89,10 +112,10 @@ const presentation = {
             return;
         }
 
-        if (!visible && !el.classList.contains(this.displayNoneClass)){
-            el.classList.add(this.displayNoneClass);
-        } else if (visible && el.classList.contains(this.displayNoneClass)){
-            el.classList.remove(this.displayNoneClass);
+        if (!visible && !el.classList.contains(stylesClasses.displayNone)){
+            el.classList.add(stylesClasses.displayNone);
+        } else if (visible && el.classList.contains(stylesClasses.displayNone)){
+            el.classList.remove(stylesClasses.displayNone);
         }
     }
 };
@@ -105,6 +128,8 @@ const game = {
 
         invisbleDivsIds.forEach(x => presentation.setVisible(x, false));
         visibleDivs.forEach(x => presentation.setVisible(x, true));
+        //get random question
+        //set question on screen
     }
 };
 
