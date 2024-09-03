@@ -156,6 +156,11 @@ button {
     justify-content: end;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
 /* [Object] Modal
  * =============================== */
 .modal {
