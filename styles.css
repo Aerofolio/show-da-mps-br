@@ -211,7 +211,7 @@ button {
     background: var(--gray-700);
     border-radius: 5px;
     padding: 2em;
-    height: 50%;
+    height: 70%;
 }
 
 .modal__close {
