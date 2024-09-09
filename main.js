@@ -330,7 +330,10 @@ const player = {
         if (questionsList.flatMap(x => x.answers).find(x => x.id == this.selectedAnswer).correctAnswer)
             this.correctAnswers++;
 
-        game.nextQuestion();
+        if (this.answeredQuestions.length < game.maxNumberOfQuestions)
+            game.nextQuestion();
+        else
+            game.end();
     },
     decreaseTips: function () {
         this.tipsLeft--;
@@ -338,6 +341,7 @@ const player = {
 };
 
 const game = {
+    maxNumberOfQuestions: 10,
     start: function () {
         const invisbleDivsIds = ['contentNewGame', 'contentEndGame'];
         const visibleDivs = ['contentGame'];
@@ -367,6 +371,13 @@ const game = {
 
         const helpStudentsText = document.getElementById('helpStudents');
         helpStudentsText.innerText = selectedQuestion.tip;
+    },
+    end: function () {
+        const invisbleDivsIds = ['contentNewGame', 'contentGame'];
+        const visibleDivs = ['contentEndGame'];
+
+        invisbleDivsIds.forEach(x => presentation.setVisible(x, false));
+        visibleDivs.forEach(x => presentation.setVisible(x, true));
     }
 };
 
