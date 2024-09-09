@@ -1,174 +1,166 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Show da MPS.BR</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header class="header">
-        <i class="ph ph-currency-circle-dollar"></i>
-        <strong>
-            Show da MPS.BR
-        </strong>
+      <i class="ph ph-currency-circle-dollar"></i>
+      <strong> Show da MPS.BR </strong>
     </header>
 
     <div class="wrapper">
-        <main>
+      <main>
+        <div id="contentNewGame">
+          <div class="text-center">
+            <i class="ph ph-question icon-start"></i>
+            <h1 class="mt-1">Inicie o jogo</h1>
+            <p class="mt-1">
+              Aprenda se divertindo! Jogue agora o show da MPS.BR!
+            </p>
+            <button
+              type="button"
+              onclick="game.start()"
+              class="button-green mt-1"
+            >
+              <i class="ph ph-play"></i>
+              JOGAR
+            </button>
+          </div>
+        </div>
 
-            <div id="contentNewGame">
-                <div class="text-center">
-                    <i class="ph ph-question icon-start"></i>
-                    <h1 class="mt-1">
-                        Inicie o jogo
-                    </h1>
-                    <p class="mt-1">
-                        Aprenda se divertindo! Jogue agora o show da MPS.BR!
-                    </p>
-                    <button type="button" onclick="game.start()" class="button-green mt-1">
-                        <i class="ph ph-play"></i>
-                        JOGAR
-                    </button>
-                </div>
+        <div id="contentGame" class="d-none">
+          <div class="questionNumber">
+            <strong> Pergunta 1/10 </strong>
+          </div>
+          <div class="question" id="question">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim ipsa
+            a perferendis eius voluptas odit consequuntur minima deserunt fugit
+            et numquam, in voluptate quam, id nemo. Consequuntur voluptas nobis
+            accusantium.
+          </div>
 
+          <div id="answerList">
+            <div class="answer">
+              <i class="ph ph-circle"></i>
+              <span>Resposta 1</span>
             </div>
 
-            <div id="contentGame" class="d-none">
-
-                <div class="questionNumber">
-                    <strong>
-                        Pergunta 1/10
-                    </strong>
-                </div>
-                <div class="question" id="question">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim ipsa a perferendis eius voluptas odit
-                    consequuntur minima deserunt fugit et numquam, in voluptate quam, id nemo. Consequuntur voluptas
-                    nobis accusantium.
-                </div>
-
-                <div id="answerList">
-                    <div class="answer">
-                        <i class="ph ph-circle"></i>
-                        <span>Resposta 1</span>
-                    </div>
-
-                    <div class="answer">
-                        <i class="ph ph-circle"></i>
-                        <span>Resposta 2</span>
-                    </div>
-
-                    <div class="answer">
-                        <i class="ph ph-circle"></i>
-                        <span>Resposta 3</span>
-                    </div>
-
-                    <div class="answer">
-                        <i class="ph ph-circle"></i>
-                        <span>Resposta 4</span>
-                    </div>
-                </div>
-
-                <div class="flex-end">
-                    <button type="button" class="button-green mt-1">
-                        AVANÇAR
-                    </button>
-                </div>
-
-                <div class="mt-2 container-helps">
-                    <label for="modal-1" class="link-help">
-                        <span>
-                            Ajuda dos Univisitários
-                            (1 Ajuda restante)
-                        </span>
-                    </label>
-                    <label for="modal-2" class="link-help">
-                        <span>
-                            Ajuda da Plateia
-                            (1 Ajuda restante)
-                        </span>
-                    </label>
-                </div>
-
+            <div class="answer">
+              <i class="ph ph-circle"></i>
+              <span>Resposta 2</span>
             </div>
 
-            <div id="contentEndGame" class="d-none">
-
+            <div class="answer">
+              <i class="ph ph-circle"></i>
+              <span>Resposta 3</span>
             </div>
 
-        </main>
+            <div class="answer">
+              <i class="ph ph-circle"></i>
+              <span>Resposta 4</span>
+            </div>
+          </div>
+
+          <div class="flex-end">
+            <button
+              type="button"
+              class="button-green mt-1"
+              onclick="player.answerQuestion()"
+            >
+              AVANÇAR
+            </button>
+          </div>
+
+          <div class="mt-2 container-helps">
+            <label for="modal-1" class="link-help">
+              <span> Ajuda dos Univisitários (1 Ajuda restante) </span>
+            </label>
+            <label for="modal-2" class="link-help">
+              <span> Ajuda da Plateia (1 Ajuda restante) </span>
+            </label>
+          </div>
+        </div>
+
+        <div id="contentEndGame" class="d-none">
+          <div class="container-end-game">
+            <strong>Parabéns!</strong>
+            <p>Sua pontuação final é:</p>
+            <h1>7 Pontos</h1>
+            <p>Que tal tentar de novo e superar essa marca?</p>
+            <button
+              type="button"
+              onclick="game.start()"
+              class="button-green mt-1"
+            >
+              <i class="ph ph-play"></i>
+              JOGAR NOVAMENTE
+            </button>
+          </div>
+        </div>
+      </main>
     </div>
-
 
     <input class="modal-state" id="modal-1" type="checkbox" />
     <div class="modal">
-        <label class="modal__bg" for="modal-1"></label>
-        <div class="modal__inner">
-            <label class="modal__close" for="modal-1"></label>
-            <h2 class="text-center">Ajuda dos Universitários</h2>
-            <p class="mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae unde a possimus dignissimos debitis.
-                Fuga assumenda esse neque dolor molestias possimus amet voluptatum delectus eos? Nihil optio suscipit
-                placeat modi.
-            </p>
-            <div class="flex-center">
-                <button type="button" class="button-green mt-1">
-                    FECHAR
-                </button>
-            </div>
+      <label class="modal__bg" for="modal-1"></label>
+      <div class="modal__inner">
+        <label class="modal__close" for="modal-1"></label>
+        <h2 class="text-center">Ajuda dos Universitários</h2>
+        <p class="mt-2" id="helpStudents"></p>
+        <div class="flex-center">
+          <button type="button" class="button-green mt-1">FECHAR</button>
         </div>
+      </div>
     </div>
 
     <input class="modal-state" id="modal-2" type="checkbox" />
     <div class="modal">
-        <label class="modal__bg" for="modal-2"></label>
-        <div class="modal__inner">
-            <label class="modal__close" for="modal-2"></label>
-            <h2 class="text-center">Ajuda da Plateia</h2>
-            <p class="text-center mt-1">
-                Um pesquisa com a plateia chegou nos seguintes resultados:
-            </p>
-            <div id="answerListHelp" class="mt-2">
-                <div class="answer">
-                    <i class="ph ph-check-circle"></i>
-                    <span>1 (80%)</span>
-                </div>
+      <label class="modal__bg" for="modal-2"></label>
+      <div class="modal__inner">
+        <label class="modal__close" for="modal-2"></label>
+        <h2 class="text-center">Ajuda da Plateia</h2>
+        <p class="text-center mt-1">
+          Um pesquisa com a plateia chegou nos seguintes resultados:
+        </p>
+        <div id="answerListHelp" class="mt-2">
+          <div class="answer">
+            <i class="ph ph-check-circle"></i>
+            <span>1 (80%)</span>
+          </div>
 
-                <div class="answer">
-                    <i class="ph ph-circle"></i>
-                    <span>2 (10%)</span>
-                </div>
+          <div class="answer">
+            <i class="ph ph-circle"></i>
+            <span>2 (10%)</span>
+          </div>
 
-                <div class="answer">
-                    <i class="ph ph-circle"></i>
-                    <span>3 (5%)</span>
-                </div>
+          <div class="answer">
+            <i class="ph ph-circle"></i>
+            <span>3 (5%)</span>
+          </div>
 
-                <div class="answer">
-                    <i class="ph ph-circle"></i>
-                    <span>4 (5%)</span>
-                </div>
-            </div>
-            <div class="flex-end">
-                <button type="button" class="button-green mt-1">
-                    FECHAR
-                </button>
-            </div>
+          <div class="answer">
+            <i class="ph ph-circle"></i>
+            <span>4 (5%)</span>
+          </div>
         </div>
+        <div class="flex-end">
+          <button type="button" class="button-green mt-1">FECHAR</button>
+        </div>
+      </div>
     </div>
 
-
     <script type="text/javascript" src="./main.js"></script>
-
-</body>
-
+  </body>
 </html>
