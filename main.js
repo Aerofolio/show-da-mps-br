@@ -51,6 +51,7 @@ const startup = {
     start: function () {
         this.setQuestionsIds();
         this.setAnswersEvents();
+        this.setLinkHelpEvents();
     },
     setQuestionsIds: function () {
         let answerId = 0;
@@ -63,6 +64,12 @@ const startup = {
         const answersListDiv = document.getElementById('answerList');
         for (let answerDiv = answersListDiv.children[0]; !utils.isNullOrEmpty(answerDiv); answerDiv = answerDiv.nextElementSibling) {
             answerDiv.addEventListener('click', () => { question.setSelectedQuestion(answerDiv) });
+        }
+    },
+    setLinkHelpEvents: function () {
+        const helpStudentsLinks = document.getElementsByClassName(stylesClasses.linkHelp);
+        for (let i = 0; i < helpStudentsLinks.length; i++) {
+            helpStudentsLinks[i].addEventListener('click', () => { player.decreaseTips() });
         }
     }
 };
@@ -108,7 +115,8 @@ const stylesClasses = {
     displayNone: 'd-none',
     selectedAnswer: 'active',
     selectedIcon: 'ph-check-circle',
-    unselectedIcon: 'ph-circle'
+    unselectedIcon: 'ph-circle',
+    linkHelp: 'link-help'
 };
 
 const presentation = {
@@ -147,6 +155,9 @@ const player = {
             this.correctAnswers++;
 
         game.nextQuestion();
+    },
+    decreaseTips: function () {
+        this.tipsLeft--;
     }
 };
 
@@ -177,6 +188,9 @@ const game = {
             answerText.innerText = selectedQuestion.answers[i].description;
             answerDiv.answerId = selectedQuestion.answers[i].id;
         }
+
+        const helpStudentsText = document.getElementById('helpStudents');
+        helpStudentsText.innerText = selectedQuestion.tip;
     }
 };
 
