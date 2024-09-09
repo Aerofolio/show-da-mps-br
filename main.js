@@ -43,6 +43,182 @@ const questionsList = [
                 correctAnswer: false
             }
         ]
+    },
+    {
+        statment: 'Você é um robô?',
+        tip: '0000111 00111 0111 01111',
+        answers: [
+            {
+                description: 'Sim',
+                correctAnswer: false
+            },
+            {
+                description: 'Não',
+                correctAnswer: false
+            },
+            {
+                description: 'Não sei',
+                correctAnswer: true
+            },
+            {
+                description: 'Bip bop',
+                correctAnswer: false
+            }
+        ]
+    },
+    {
+        statment: 'Qual o celular do ano?',
+        tip: 'Marca da maça',
+        answers: [
+            {
+                description: 'Apple',
+                correctAnswer: true
+            },
+            {
+                description: 'Samsung',
+                correctAnswer: false
+            },
+            {
+                description: 'Xiomi',
+                correctAnswer: true
+            },
+            {
+                description: 'Nokia',
+                correctAnswer: false
+            }
+        ]
+    },
+    {
+        statment: 'A opção 3 esta correta',
+        tip: 'Quem escreveu a pergunta estava mentindo',
+        answers: [
+            {
+                description: 'Opção 1',
+                correctAnswer: true
+            },
+            {
+                description: 'Opção 2',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 3',
+                correctAnswer: true
+            },
+            {
+                description: 'Opção 4',
+                correctAnswer: false
+            }
+        ]
+    },
+    {
+        statment: 'Pergunta 6?',
+        tip: 'Dica da pergunta 6',
+        answers: [
+            {
+                description: 'Opção 1',
+                correctAnswer: true
+            },
+            {
+                description: 'Opção 2',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 3',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 4',
+                correctAnswer: true
+            }
+        ]
+    },
+    {
+        statment: 'Pergunta 7?',
+        tip: 'Dica da pergunta 7',
+        answers: [
+            {
+                description: 'Opção 1',
+                correctAnswer: true
+            },
+            {
+                description: 'Opção 2',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 3',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 4',
+                correctAnswer: true
+            }
+        ]
+    },
+    {
+        statment: 'Pergunta 8?',
+        tip: 'Dica da pergunta 8',
+        answers: [
+            {
+                description: 'Opção 1',
+                correctAnswer: true
+            },
+            {
+                description: 'Opção 2',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 3',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 4',
+                correctAnswer: true
+            }
+        ]
+    },
+    {
+        statment: 'Pergunta 9?',
+        tip: 'Dica da pergunta 9',
+        answers: [
+            {
+                description: 'Opção 1',
+                correctAnswer: true
+            },
+            {
+                description: 'Opção 2',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 3',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 4',
+                correctAnswer: true
+            }
+        ]
+    },
+    {
+        statment: 'Pergunta 10?',
+        tip: 'Dica da pergunta 10',
+        answers: [
+            {
+                description: 'Opção 1',
+                correctAnswer: true
+            },
+            {
+                description: 'Opção 2',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 3',
+                correctAnswer: false
+            },
+            {
+                description: 'Opção 4',
+                correctAnswer: true
+            }
+        ]
     }
 ]
 
