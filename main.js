@@ -320,6 +320,10 @@ const presentation = {
         } else if (visible && el.classList.contains(stylesClasses.displayNone)){
             el.classList.remove(stylesClasses.displayNone);
         }
+    },
+    closeModal: function (modalId) {
+        const modalStateCheckbox = document.getElementById(modalId);
+        modalStateCheckbox.checked = false;
     }
 };
 
