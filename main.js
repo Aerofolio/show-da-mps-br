@@ -283,6 +283,18 @@ const question = {
             unselectedAnswer.classList.remove(stylesClasses.selectedAnswer);
             player.selectedAnswer = undefined;
         }
+    },
+    setQuestionNumber: function () {
+        const answerdQuestionsCount = document.getElementById('answerdQuestionsCount');
+        const totalQuestionsCount = document.getElementById('totalQuestionsCount');
+
+        answerdQuestionsCount.innerText = player.answeredQuestions.length;
+        totalQuestionsCount.innerText = game.maxNumberOfQuestions;
+    },
+    setFinalScore: function () {
+        const scoreCount = document.getElementById('scoreCount');
+
+        scoreCount.innerText = player.correctAnswers;
     }
 };
 
@@ -354,6 +366,7 @@ const game = {
     },
     nextQuestion: function () {
         question.clearSelectedQuestions();
+
         const selectedQuestion = question.getRandomQuestion();
         player.answeredQuestions.push(selectedQuestion.id);
 
@@ -371,6 +384,8 @@ const game = {
 
         const helpStudentsText = document.getElementById('helpStudents');
         helpStudentsText.innerText = selectedQuestion.tip;
+
+        question.setQuestionNumber();
     },
     end: function () {
         const invisbleDivsIds = ['contentNewGame', 'contentGame'];
@@ -378,6 +393,8 @@ const game = {
 
         invisbleDivsIds.forEach(x => presentation.setVisible(x, false));
         visibleDivs.forEach(x => presentation.setVisible(x, true));
+
+        question.setFinalScore();
     }
 };
 
