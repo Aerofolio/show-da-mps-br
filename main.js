@@ -493,6 +493,31 @@ const question = {
         const scoreCount = document.getElementById('scoreCount');
 
         scoreCount.innerText = player.correctAnswers;
+    },
+    populateTips: function(selectedQuestion) {
+        const helpStudentsText = document.getElementById('helpStudents');
+        helpStudentsText.innerText = selectedQuestion.tip;
+
+        const correct = Math.floor(Math.random() * 51) + 50;
+        
+        let remaining = 100 - correct;
+
+        for (let i = 0; i < selectedQuestion.answers.length; i++) {
+
+            const idDiv = "percentProbabilty" + (i + 1);
+
+            if (selectedQuestion.answers[i].correctAnswer) {
+                document.getElementById(idDiv).innerText = correct;
+            } else {
+
+                const incorrect = Math.floor(Math.random() * (remaining + 1));
+                remaining -= incorrect;
+
+                document.getElementById(idDiv).innerText = incorrect;
+            }
+
+        }
+
     }
 };
 
@@ -597,8 +622,7 @@ const game = {
             answerDiv.answerId = selectedQuestion.answers[i].id;
         }
 
-        const helpStudentsText = document.getElementById('helpStudents');
-        helpStudentsText.innerText = selectedQuestion.tip;
+        question.populateTips(selectedQuestion);
 
         question.setQuestionNumber();
     },
