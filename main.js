@@ -537,6 +537,7 @@ const player = {
         this.answeredQuestions = [];
         this.selectedAnswer = undefined;
         this.selectedQuestion = undefined;
+        this.handleVisibilityTips();
     },
     answerQuestion: function () {
         if (utils.isNullOrEmpty(this.selectedAnswer)) return;
@@ -551,6 +552,16 @@ const player = {
     },
     decreaseTips: function () {
         this.tipsLeft--;
+        this.handleVisibilityTips();
+    },
+    handleVisibilityTips: function () {
+        const elements = document.getElementsByClassName('number-tips');
+        Array.from(elements).forEach(element => {
+            element.textContent = this.tipsLeft;
+        });
+        const  hasTips = this.tipsLeft > 0
+        const divsId = ["containerHelpStudents", "containerHelpAudience"];
+        divsId.forEach(x => presentation.setVisible(x, hasTips));
     }
 };
 
@@ -562,6 +573,8 @@ const game = {
 
         invisbleDivsIds.forEach(x => presentation.setVisible(x, false));
         visibleDivs.forEach(x => presentation.setVisible(x, true));
+
+
 
         player.startGame();
         this.nextQuestion();
