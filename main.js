@@ -1,225 +1,423 @@
 /********** Questions Array **********/
 const questionsList = [
     {
-        statment: 'Qual a cor do mar?',
-        tip: 'Mesma cor do céu',
+        statment: 'O que significa MPS.BR?',
+        tip: 'É um modelo de qualidade de processos.',
         answers: [
             {
-                description: 'Azul',
+                description: 'Modelo de Processos de Software Brasileiro',
+                correctAnswer: false
+            },
+            {
+                description: 'Metodologia de Processos de Software Brasileiro',
+                correctAnswer: false
+            },
+            {
+                description: 'Melhoria de Processos do Software Brasileiro',
                 correctAnswer: true
             },
             {
-                description: 'Verde',
-                correctAnswer: false
-            },
-            {
-                description: 'Vermelho',
-                correctAnswer: false
-            },
-            {
-                description: 'Rosa',
+                description: 'Manual de Processos de Software Brasileiro',
                 correctAnswer: false
             }
         ]
     },
     {
-        statment: 'Qual o objeto redondo que sai da galinha?',
-        tip: 'De onde vem o pintinho',
+        statment: 'Qual organização criou o MPS.BR?',
+        tip: 'É uma associação para promoção da excelência do software brasileiro.',
         answers: [
             {
-                description: 'Pedra',
+                description: 'ABNT',
                 correctAnswer: false
             },
             {
-                description: 'Frango assado',
+                description: 'INMETRO',
                 correctAnswer: false
             },
             {
-                description: 'Ovo',
+                description: 'Softex',
                 correctAnswer: true
             },
             {
-                description: 'Pena',
+                description: 'ANATEL',
                 correctAnswer: false
             }
         ]
     },
     {
-        statment: 'Você é um robô?',
-        tip: '0000111 00111 0111 01111',
+        statment: 'Em que ano o MPS.BR foi criado?',
+        tip: 'Foi no início dos anos 2000',
         answers: [
             {
-                description: 'Sim',
+                description: '2000',
                 correctAnswer: false
             },
             {
-                description: 'Não',
+                description: '2005',
                 correctAnswer: false
             },
             {
-                description: 'Não sei',
+                description: '2010',
+                correctAnswer: false
+            },
+            {
+                description: '2003',
+                correctAnswer: true
+            },
+        ]
+    },
+    {
+        statment: 'Qual é o principal objetivo do MPS.BR?',
+        tip: 'Foca na qualidade e eficiência dos processos.',
+        answers: [
+            {
+                description: 'Melhorar a capacidade de desenvolvimento de software',
                 correctAnswer: true
             },
             {
-                description: 'Bip bop',
+                description: 'Reduzir custos de desenvolvimento',
+                correctAnswer: false
+            },
+            {
+                description: 'Aumentar a segurança de software',
+                correctAnswer: false
+            },
+            {
+                description: 'Melhorar a interface do usuário',
                 correctAnswer: false
             }
         ]
     },
     {
-        statment: 'Qual o celular do ano?',
-        tip: 'Marca da maça',
+        statment: 'Qual ministério apoia o MPS.BR?',
+        tip: 'Está relacionado à inovação e tecnologia',
         answers: [
             {
-                description: 'Apple',
-                correctAnswer: true
-            },
-            {
-                description: 'Samsung',
+                description: 'Ministério da Educação',
                 correctAnswer: false
             },
             {
-                description: 'Xiomi',
+                description: 'Ministério da Saúde',
+                correctAnswer: false
+            },
+            {
+                description: 'Ministério da Ciência, Tecnologia e Inovações (MCTI)',
                 correctAnswer: true
             },
             {
-                description: 'Nokia',
+                description: 'Ministério do Meio Ambiente',
                 correctAnswer: false
             }
         ]
     },
     {
-        statment: 'A opção 3 esta correta',
-        tip: 'Quem escreveu a pergunta estava mentindo',
+        statment: 'Qual é a relação entre MPS.BR e CMMI?',
+        tip: 'Ambos são modelos de maturidade de processos.',
         answers: [
             {
-                description: 'Opção 1',
+                description: 'São modelos compatíveis',
                 correctAnswer: true
             },
             {
-                description: 'Opção 2',
+                description: 'São modelos concorrentes',
                 correctAnswer: false
             },
             {
-                description: 'Opção 3',
-                correctAnswer: true
+                description: 'MPS.BR é uma versão do CMMI',
+                correctAnswer: false
             },
             {
-                description: 'Opção 4',
+                description: ' CMMI é uma versão do MPS.BR ',
                 correctAnswer: false
             }
         ]
     },
     {
-        statment: 'Pergunta 6?',
-        tip: 'Dica da pergunta 6',
+        statment: 'Qual é o nível mais alto de maturidade no MPS.BR?',
+        tip: 'É a primeira letra do alfabeto.',
         answers: [
             {
-                description: 'Opção 1',
-                correctAnswer: true
-            },
-            {
-                description: 'Opção 2',
+                description: 'Nível 5',
                 correctAnswer: false
             },
             {
-                description: 'Opção 3',
+                description: 'Nível A',
+                correctAnswer: true
+            },
+            {
+                description: 'Nível 1',
                 correctAnswer: false
             },
             {
-                description: 'Opção 4',
-                correctAnswer: true
+                description: 'Nível C',
+                correctAnswer: false
             }
         ]
     },
     {
-        statment: 'Pergunta 7?',
-        tip: 'Dica da pergunta 7',
+        statment: 'Quantos níveis de maturidade existem no MPS.BR?',
+        tip: 'É um número ímpar entre 5 e 10.',
         answers: [
             {
-                description: 'Opção 1',
-                correctAnswer: true
-            },
-            {
-                description: 'Opção 2',
+                description: '5',
                 correctAnswer: false
             },
             {
-                description: 'Opção 3',
+                description: '10',
                 correctAnswer: false
             },
             {
-                description: 'Opção 4',
+                description: '3',
+                correctAnswer: false
+            },
+            {
+                description: '7',
                 correctAnswer: true
+            },
+        ]
+    },
+    {
+        statment: 'Qual é o nome do modelo de referência do MPS.BR?',
+        tip: 'As iniciais são as mesmas do nome do programa.',
+        answers: [
+            {
+                description: 'MR-MPS',
+                correctAnswer: true
+            },
+            {
+                description: 'MR-Software',
+                correctAnswer: false
+            },
+            {
+                description: 'MR-Processos',
+                correctAnswer: false
+            },
+            {
+                description: 'MR-Qualidade',
+                correctAnswer: false
             }
         ]
     },
     {
-        statment: 'Pergunta 8?',
-        tip: 'Dica da pergunta 8',
+        statment: 'Qual é a principal diferença entre MPS.BR e ISO/IEC 15504?',
+        tip: 'Um é um modelo internacional, o outro é nacional.',
         answers: [
             {
-                description: 'Opção 1',
-                correctAnswer: true
-            },
-            {
-                description: 'Opção 2',
+                description: 'ISO/IEC 15504 é mais antigo',
                 correctAnswer: false
             },
             {
-                description: 'Opção 3',
+                description: 'MPS.BR é específico para o Brasil',
+                correctAnswer: true
+            },
+            {
+                description: 'MPS.BR é mais caro',
                 correctAnswer: false
             },
             {
-                description: 'Opção 4',
-                correctAnswer: true
+                description: 'ISO/IEC 15504 é mais simples',
+                correctAnswer: false
             }
         ]
     },
     {
-        statment: 'Pergunta 9?',
-        tip: 'Dica da pergunta 9',
+        statment: 'Qual é a principal vantagem do MPS.BR para pequenas empresas?',
+        tip: 'É mais econômico.',
         answers: [
             {
-                description: 'Opção 1',
-                correctAnswer: true
-            },
-            {
-                description: 'Opção 2',
+                description: 'Maior complexidade',
                 correctAnswer: false
             },
             {
-                description: 'Opção 3',
+                description: 'Menor flexibilidade',
                 correctAnswer: false
             },
             {
-                description: 'Opção 4',
+                description: 'Custo mais acessível',
                 correctAnswer: true
+            },
+            {
+                description: 'Menor suporte técnico',
+                correctAnswer: false
             }
         ]
     },
     {
-        statment: 'Pergunta 10?',
-        tip: 'Dica da pergunta 10',
+        statment: 'Qual é a instituição responsável pela certificação MPS.BR?',
+        tip: 'É a mesma que criou o modelo.',
         answers: [
             {
-                description: 'Opção 1',
+                description: 'Softex',
                 correctAnswer: true
             },
             {
-                description: 'Opção 2',
+                description: 'ABNT',
                 correctAnswer: false
             },
             {
-                description: 'Opção 3',
+                description: 'INMETRO',
                 correctAnswer: false
             },
             {
-                description: 'Opção 4',
-                correctAnswer: true
+                description: 'ANATEL',
+                correctAnswer: false
             }
         ]
-    }
+    },
+    {
+        statment: 'Qual é o principal benefício do MPS.BR para empresas de software?',
+        tip: 'Foca na qualidade e eficiência ao longo do tempo.',
+        answers: [
+            {
+                description: 'Redução imediata de custos',
+                correctAnswer: false
+            },
+            {
+                description: 'Aumento de lucros',
+                correctAnswer: false
+            },
+            {
+                description: 'Expansão internacional',
+                correctAnswer: false
+            },
+            {
+                description: 'Melhoria contínua dos processos',
+                correctAnswer: true
+            },
+        ]
+    },
+    {
+        statment: 'Qual é a relação do MPS.BR com a ISO/IEC12207?',
+        tip: 'Ambos são modelos de processos de software.',
+        answers: [
+            {
+                description: 'São concorrentes',
+                correctAnswer: false
+            },
+            {
+                description: 'São compatíveis',
+                correctAnswer: true
+            },
+            {
+                description: 'MPS.BR é uma versão da ISO/IEC 12207',
+                correctAnswer: false
+            },
+            {
+                description: 'ISO/IEC 12207 é uma versão do MPS.BR',
+                correctAnswer: false
+            }
+        ]
+    },
+    {
+        statment: 'Qual é o principal objetivo do nível F no MPS.BR?',
+        tip: 'Está relacionado à definição e controle de necessidades.',
+        answers: [
+            {
+                description: 'Desenvolvimento de Software',
+                correctAnswer: false
+            },
+            {
+                description: 'Gerenciamento de Requisitos',
+                correctAnswer: true
+            },
+            {
+                description: 'Testes de Software',
+                correctAnswer: false
+            },
+            {
+                description: 'Manutenção de Software',
+                correctAnswer: false
+            }
+        ]
+    },
+    {
+        statment: 'Qual é a principal característica do nível E no MPS.BR?',
+        tip: 'Foca na construção e desenvolvimento de software.',
+        answers: [
+            {
+                description: 'Gerenciamento de Projetos',
+                correctAnswer: false
+            },
+            {
+                description: 'Testes de Software',
+                correctAnswer: false
+            },
+            {
+                description: 'Manutenção de Software',
+                correctAnswer: false
+            },
+            {
+                description: 'Engenharia de Software',
+                correctAnswer: true
+            },
+        ]
+    },
+    {
+        statment: 'Qual é a principal diferença entre MPS.BR e CMMI?',
+        tip: 'Um é mais econômico e adaptável para empresas menores.',
+        answers: [
+            {
+                description: 'MPS.BR é mais acessível para pequenas empresas',
+                correctAnswer: true
+            },
+            {
+                description: 'CMMI é mais simples',
+                correctAnswer: false
+            },
+            {
+                description: 'MPS.BR é mais caro',
+                correctAnswer: false
+            },
+            {
+                description: 'CMMI é específico para o Brasil',
+                correctAnswer: false
+            }
+        ]
+    },
+    {
+        statment: 'Qual é o principal foco do nível D no MPS.BR?',
+        tip: 'Está relacionado à organização e controle de atividades e qualidade.',
+        answers: [
+            {
+                description: 'Desenvolvimento de Software',
+                correctAnswer: false
+            },
+            {
+                description: 'Gerenciamento de Projetos e Qualidade',
+                correctAnswer: true
+            },
+            {
+                description: 'Testes de Software',
+                correctAnswer: false
+            },
+            {
+                description: 'Manutenção de Software',
+                correctAnswer: false
+            }
+        ]
+    },
+    {
+        statment: 'Qual é a principal vantagem do MPS.BR para empresas de software brasileiras?',
+        tip: 'É específico para o contexto brasileiro.',
+        answers: [
+            {
+                description: 'Maior complexidade',
+                correctAnswer: false
+            },
+            {
+                description: 'Menor flexibilidade',
+                correctAnswer: false
+            },
+            {
+                description: 'Adaptação à realidade nacional',
+                correctAnswer: true
+            },
+            {
+                description: 'Menor suporte técnico',
+                correctAnswer: false
+            }
+        ]
+    },
 ]
 
 /********** Startup functions **********/
